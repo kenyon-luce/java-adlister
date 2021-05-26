@@ -4,8 +4,10 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 import java.io.PrintWriter;
+import java.lang.reflect.Array;
+import java.util.ArrayList;
 
-@WebServlet(name="MarcoHelloWorld",
+@WebServlet(name = "MarcoHelloWorld",
         urlPatterns = "/hello") //has to be outside the class. This is the metadata to go with our servlet
 public class HelloWorldServlet extends HttpServlet { //this class extends from HttpServlet
     String name;
@@ -15,22 +17,40 @@ public class HelloWorldServlet extends HttpServlet { //this class extends from H
         response.setContentType("text/html");
 
         name = request.getParameter("name");
-        if(name != null){
-            response.getWriter().println("<h1>Hello, " + name + "!</h1>");
+        String nameCaps = null;
+
+        if (name != null) {
+            String[] names = name.split(" "); //splits names with space between them, into an array
+            ArrayList<String> nameList = new ArrayList<>(); //bucket that will collect my names (tried doing regular concatenation, but didn't find it working, hence we're rolling with this)
+
+            for (String name : names) {
+                String caps = name.split("")[0].toUpperCase() + name.substring(1); //capitalizes first letter of name
+                nameList.add(caps); //adds capitalized name to my ArrayList (for each name)
+                StringBuilder string = new StringBuilder(); //created StringBuilder Object
+                for (String s : nameList) { //each item in ArrayList is appended to the StringBuilder to create a complete string of names
+                    string.append(" "); //separates names with spaces, by adding space before each append
+                    string.append(s);
+                }
+                nameCaps = string.toString(); //getting the final string from StringBuilder, and putting it into a variable that is called on below
+            } //only prints last name given
+            //update: fixed using null instance, ArrayList and StringBuilder
+            response.getWriter().println("<h1>Hello," + nameCaps + "!</h1>");
         } else {
             response.getWriter().println("<h1>Hello World!</h1>");
         }
-        //localhost:8080/hello?name=tim --> Hello, tim!
-        //localhost:8080/hello?name=kenyon+luce --> Hello, kenyon luce!
+        //localhost:8080/hello?name=tim --> Hello, Tim!
+        //localhost:8080/hello?name=kenyon+luce --> Hello, Kenyon Luce!
 
 
         //COUNT NUMBER OF VISITS + RESET
-        if(request.getParameter("count").equals("start")){
+        if (request.getParameter("count").equals("start")) {
             count++;
-        }
-        else if(request.getParameter("count").equals("reset")){
+        } else if (request.getParameter("count").equals("reset")) {
             count = 0;
         }
         response.getWriter().println("Times visited: " + count);
+
+        //localhost:8080/hello?name=tim&count=start --> Hello, Tim! Times visited: 1 (increments every time it loads)
+        //localhost:8080/hello?name=kenyon+luce --> Hello, Kenyon Luce! Times visited: 0 (sets back to 0)
     }
 }
