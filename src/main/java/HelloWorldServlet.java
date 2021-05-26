@@ -12,9 +12,11 @@ public class HelloWorldServlet extends HttpServlet { //this class extends from H
         name = request.getParameter("name");
 
         if(name != null){
-            response.getWriter().println("<h1>Hello " + name + "!</h1>");
+            response.getWriter().println("<h1>Hello, " + name + "!</h1>");
         } else {
             response.getWriter().println("<h1>Hello World!</h1>");
         }
+        //localhost:8080/hello?name=tim --> Hello, tim!
+        //localhost:8080/hello?name=kenyon+luce --> Hello, kenyon luce!
     }
 }
