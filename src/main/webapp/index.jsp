@@ -11,8 +11,8 @@
     <title>Adlister</title>
 </head>
 <body>
-<%@include file="partials/navbar.jsp"%> <%--incorporates content from navbar.jsp--%>
-<%--^^because we linked this jsp to a partial jsp (lives on its own, no page contentType), we have defaulted this jsp as the main page--%>
+<%@include file="welcome.jsp"%> <%--incorporates welcome.jsp--%>
+<%--file with the name "index" is the default main page--%>
     <h1>All Adds</h1>
 </body>
 </html>

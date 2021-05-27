@@ -18,6 +18,7 @@
 </head>
 <body>
 <%@include file="partials/navbar.jsp"%>
+<%--incorporates partial file (file doesn't belong to anything, also has to be in partials folder)--%>
 
 <%--running arbitrary java code--%>
 <%! int count = 0; %>  <%--the '!' is for initiating instances, must be separate so we can continuously reassign it--%>
@@ -26,6 +27,10 @@
 %>
     <h1>Hello, Marco</h1>
     <p>What is 1 + 1? <%= 1 + 1 %> would be the answer <!-- '=' returns function value --></p>
+    <p>This page has been requested using the method <%=request.getMethod()%></p>
+    <p>Path: <%=request.getRequestURL()%></p>
+    <p>Name parameter in the query string <%=request.getParameter("name")%></p>
+
     <div>This page has been visited <%= count %></div>
 </body>
 </html>
