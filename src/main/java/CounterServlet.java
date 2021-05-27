@@ -12,10 +12,12 @@ public class CounterServlet extends HttpServlet {
 //        response.setContentType("text/html");
         //COUNT NUMBER OF VISITS + RESET
 
-
         count++;
         if (request.getParameter("reset") != null) {
             count = 0;
+//            request.removeAttribute("reset");
+//            request.getParameter("reset").equals(request.getParameter(""));
+//            request.getContextPath();
         }
 
         response.getWriter().println("Times visited: " + count);
