@@ -10,8 +10,11 @@
 <html>
 <head>
     <title>Login</title>
+    <%@include file="partials/head.jsp"%>
 </head>
 <body>
+    <%@ include file="partials/navbar.jsp" %>
+    <h1>Login Page</h1>
     <form action="/login.jsp" method="POST">
         <label for="username">Username</label><br>
         <input type="text" id = username name="username"><br>
