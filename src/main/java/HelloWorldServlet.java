@@ -12,9 +12,16 @@ public class HelloWorldServlet extends HttpServlet { //this class extends from H
 
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws IOException {
         response.setContentType("text/html");
-
         name = request.getParameter("name");
         String nameCaps = null;
+
+        response.getWriter().println("<html>");
+        response.getWriter().println("<head>");
+        response.getWriter().println("<title>Hello World Servlet</title>");
+        response.getWriter().println("<head>");
+        response.getWriter().println("<body>");
+
+//***********Hello World with Name START***********
 
         if (name != null) {
             String[] names = name.split(" "); //splits names with space between them, into an array
@@ -37,5 +44,10 @@ public class HelloWorldServlet extends HttpServlet { //this class extends from H
         }
         //localhost:8080/hello?name=tim --> Hello, Tim!
         //localhost:8080/hello?name=kenyon+luce --> Hello, Kenyon Luce!
+
+//    *********Hello World with Name END***********
+
+        response.getWriter().println("</body>");
+        response.getWriter().println("</html>");
     }
 }
