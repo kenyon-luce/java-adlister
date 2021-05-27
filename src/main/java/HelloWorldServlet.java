@@ -3,15 +3,12 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
-import java.io.PrintWriter;
-import java.lang.reflect.Array;
 import java.util.ArrayList;
 
 @WebServlet(name = "MarcoHelloWorld",
         urlPatterns = "/hello") //has to be outside the class. This is the metadata to go with our servlet
 public class HelloWorldServlet extends HttpServlet { //this class extends from HttpServlet
     String name;
-    int count;
 
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws IOException {
         response.setContentType("text/html");
@@ -40,17 +37,5 @@ public class HelloWorldServlet extends HttpServlet { //this class extends from H
         }
         //localhost:8080/hello?name=tim --> Hello, Tim!
         //localhost:8080/hello?name=kenyon+luce --> Hello, Kenyon Luce!
-
-
-        //COUNT NUMBER OF VISITS + RESET
-        if (request.getParameter("count").equals("start")) {
-            count++;
-        } else if (request.getParameter("count").equals("reset")) {
-            count = 0;
-        }
-        response.getWriter().println("Times visited: " + count);
-
-        //localhost:8080/hello?name=tim&count=start --> Hello, Tim! Times visited: 1 (increments every time it loads)
-        //localhost:8080/hello?name=kenyon+luce --> Hello, Kenyon Luce! Times visited: 0 (sets back to 0)
     }
 }
