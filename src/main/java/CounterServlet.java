@@ -9,9 +9,8 @@ public class CounterServlet extends HttpServlet {
     int count;
 
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws IOException {
-//        response.setContentType("text/html");
+        
         //COUNT NUMBER OF VISITS + RESET
-
         count++;
         if (request.getParameter("reset") != null) {
             count = 0;

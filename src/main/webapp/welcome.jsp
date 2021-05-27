@@ -12,7 +12,7 @@
 <head>
     <title>Welcome, Marco</title>
     <!--this comment will be seen in the html source-->
-
+    <link rel="stylesheet" href="css/styles.css">
 <%--    What is 1 + 1? <%= 1 + 1 %> would be the answer <!-- '=' returns value -->--%>
 </head>
 <body>
