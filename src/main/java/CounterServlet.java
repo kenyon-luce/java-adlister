@@ -15,9 +15,7 @@ public class CounterServlet extends HttpServlet {
         count++;
         if (request.getParameter("reset") != null) {
             count = 0;
-//            request.removeAttribute("reset");
-//            request.getParameter("reset").equals(request.getParameter(""));
-//            request.getContextPath();
+            response.sendRedirect("/count"); //goes back to counting after resetting count
         }
 
         response.getWriter().println("Times visited: " + count);
