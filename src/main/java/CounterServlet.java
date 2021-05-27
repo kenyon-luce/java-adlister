@@ -3,24 +3,21 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
-import java.io.PrintWriter;
-import java.lang.reflect.Array;
-import java.util.ArrayList;
 
-@WebServlet(name = "MarcoHelloWorld", urlPatterns = "/count")
-public class CounterServlet {
+@WebServlet(name = "CounterServlet", urlPatterns = "/count")
+public class CounterServlet extends HttpServlet {
     int count;
 
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws IOException {
-        response.setContentType("text/html");
+//        response.setContentType("text/html");
         //COUNT NUMBER OF VISITS + RESET
-        if (request.getParameter("count").equals("start")) {
-            count++;
-        } else if (request.getParameter("count").equals("reset")) {
+
+
+        count++;
+        if (request.getParameter("reset") != null) {
             count = 0;
-//            String path = request.getContextPath();
-//            URLSearchParams.delete(count);
         }
+
         response.getWriter().println("Times visited: " + count);
     }
 }
