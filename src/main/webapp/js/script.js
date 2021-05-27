@@ -1,0 +1,1 @@
+console.log("check this out, connected js to jsp page")
