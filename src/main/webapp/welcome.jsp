@@ -16,6 +16,8 @@
 <%--    What is 1 + 1? <%= 1 + 1 %> would be the answer <!-- '=' returns value -->--%>
 </head>
 <body>
+<%@include file="partials/navbar.jsp"%>
+
 <%--running arbitrary java code--%>
 <%! int count = 0; %>  <%--the '!' is for initiating instances, must be separate so we can continuously reassign it--%>
 <%
