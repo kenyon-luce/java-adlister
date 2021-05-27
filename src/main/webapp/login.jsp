@@ -1,4 +1,3 @@
-<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%--
   Created by IntelliJ IDEA.
   User: kenyonluce
@@ -30,11 +29,5 @@
 
         <input type="submit" value="Submit">
     </form>
-
-<%--    <c:choose>--%>
-<%--        <c:when test="username.equals(admin)">--%>
-<%--            --%>
-<%--        </c:when>--%>
-<%--    </c:choose>--%>
 </body>
 </html>
