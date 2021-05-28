@@ -10,6 +10,6 @@
     <ul>
         <li onclick="location.href='/index.jsp'">Ads</li>
         <li>About Us</li>
-        <li onclick="location.href='/login.jsp'">Sign In</li>
+        <li class="signIn" onclick="location.href='/login.jsp'">Sign In</li>
     </ul>
 </nav>

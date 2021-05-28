@@ -6,8 +6,26 @@
   To change this template use File | Settings | File Templates.
 --%>
 <!-- Latest compiled and minified CSS -->
-<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
-<script src="jquery-3.5.1.min.js"></script>
+<%--<script src="jquery-3.5.1.min.js"></script>--%>
+<%--<script>--%>
+<%--    if($(location).attr('href') === "/profile.jsp"){--%>
+<%--        $(".signIn").html(--%>
+<%--            "<li for='profile' class=signedIn>Profile" +--%>
+<%--                "<select name='profile' id='profile'>" +--%>
+<%--                    "<option class='viewProfile'>View Profile</option>" +--%>
+<%--                    "<option class='signOut'>Sign Out</option>" +--%>
+<%--                "</select>" +--%>
+<%--            "</li>"--%>
+<%--        );--%>
+<%--        $(".signOut").mouseup(--%>
+<%--            $(location).replace("/index.jsp"),--%>
+<%--            $(".signedIn").html("<li class='signIn'>Sign In</li>")--%>
+<%--        );--%>
+<%--        $(".viewProfile").mouseup(--%>
+<%--            $(location).replace("/profile.jsp")--%>
+<%--        )--%>
+<%--    }--%>
+<%--</script>--%>
 <style>
     ul{
         display: flex;
