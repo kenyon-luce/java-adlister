@@ -10,7 +10,7 @@ import static java.lang.Integer.parseInt;
 @WebServlet(name = "GuessingGame", urlPatterns = "/guess")
 public class GuessingGame extends HttpServlet {
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        request.getRequestDispatcher("/guess/guess.jsp").forward(request, response);
+        request.getRequestDispatcher("/guess.jsp").forward(request, response);
     }
 
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws IOException{
