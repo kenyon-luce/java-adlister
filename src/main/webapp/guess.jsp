@@ -7,6 +7,7 @@
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%@ include file="guess-outcome.jsp"%>
+<%@ include file="partials/head.jsp"%>
 <html>
 <head>
     <title>Title</title>
