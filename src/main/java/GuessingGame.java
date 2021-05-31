@@ -15,10 +15,16 @@ public class GuessingGame extends HttpServlet {
 
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws IOException{
         if (request.getMethod().equalsIgnoreCase("post")) {
+            int max = 3;
+            int min = 1;
+            int random = (int) (Math.floor(Math.random() * max) + min);
+
             String guess = request.getParameter("guess");
             int guessNumber = parseInt(guess);
 
-            if (guessNumber >= 1 & guessNumber <= 3) {
+            if(guessNumber > max | guessNumber < min){
+                response.sendRedirect("/guess");
+            } else if (guessNumber == random) {
                 response.sendRedirect("/correct");
             } else {
                 response.sendRedirect("/incorrect");
